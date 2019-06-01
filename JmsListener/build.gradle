@@ -1,0 +1,36 @@
+
+//https://www.javaguides.net/2019/03/spring-boot-jms-activemq-messaging-example.html
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+	id 'eclipse'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'il.co.migdal'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.5.RELEASE', ext: 'pom'
+
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.5.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: '2.1.5.RELEASE'
+
+	// https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker
+	compile group: 'org.apache.activemq', name: 'activemq-broker', version: '5.15.9'
+
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
