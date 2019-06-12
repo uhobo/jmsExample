@@ -18,7 +18,7 @@ import org.springframework.jms.listener.MessageListenerContainer;
 
 @SpringBootApplication
 //@EnableAutoConfiguration(exclude= {JndiConnectionFactoryAutoConfiguration.class})
-@ImportResource("classpath:app-config.xml")
+//@ImportResource("classpath:app-config.xml")
 public class JmsSpringBootApplication {
 
 	public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class JmsSpringBootApplication {
 				container.start();
 			}
 		}
-		
+		 
 
 	}
 

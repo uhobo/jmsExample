@@ -19,7 +19,7 @@ repositories {
 dependencies {
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
-compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.5.RELEASE', ext: 'pom'
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.5.RELEASE'
 
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.5.RELEASE'
@@ -30,7 +30,20 @@ compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', v
 	// https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker
 	compile group: 'org.apache.activemq', name: 'activemq-broker', version: '5.15.9'
 
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.1.5.RELEASE'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+configurations {
+ 	all*.exclude group: 'log4j', module: 'log4j'
+ 	all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    all*.exclude group:'ch.qos.logback'
+    all*.exclude group:'org.springframework.boot', module: 'spring-boot-starter-logging'
+    //jul-to-slf4j'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j
+	//all*.exclude  module: 'org.springframework.boot:spring-boot-starter-logging'
+
 }
